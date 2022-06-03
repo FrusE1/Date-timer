@@ -1,0 +1,54 @@
+body {
+  background-color: rgb(34, 34, 34);
+}
+
+.date-timer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 300px;
+  border: 4px solid rgb(119, 118, 118);
+  border-radius: 20px;
+}
+
+.date-block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  color: rgb(138, 139, 129);
+  font-weight: 700;
+}
+
+.date-block__item {
+  text-align: center;
+}
+
+.date-block__counter {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.date-block__counter>* {
+  display: flex;
+  width: 70px;
+  height: 120px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-block__counter>*:not(:last-child) {
+  margin-right: 5px;
+}
+
+.date-block__sub {
+  color: yellow;
+  font-size: 30px;
+}
