@@ -1,5 +1,6 @@
 body {
   background-color: rgb(34, 34, 34);
+  color: yellow;
 }
 
 .date-timer {
@@ -22,7 +23,6 @@ body {
   padding: 0 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: yellow;
   z-index: 100;
   background-color: rgb(34, 34, 34);
 }
@@ -63,6 +63,38 @@ body {
 }
 
 .date-block__sub {
-  color: yellow;
   font-size: 30px;
+  color: yellow;
+}
+
+.date-timer__ledge-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  transform: translateY(100%);
+}
+
+.date-timer__ledge {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 12px;
+  opacity: 0.3;
+  border: 4px solid rgb(119, 118, 118);
+  border-top-style: none;
+  border-radius: 0 0 20px 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.date-timer__ledge:hover,
+.date-timer__ledge:focus {
+  opacity: 0.6;
+}
+
+.date-timer__ledge.active-date-ledge {
+  opacity: 1;
 }
