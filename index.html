@@ -10,13 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/795a81039a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
   <div class="container">
     <div class="date-timer">
-      <div class="date-timer__month">
+      <div data-ledge="stopwatch" data-ledge="current-time" class="date-timer__month">
         <div data-timer="month">Januar</div>
       </div>
       <div class="date-timer__block date-block">
@@ -49,10 +50,15 @@
           <div class="date-block__sub">seconds</div>
         </div>
       </div>
-      <div class="date-timer__ledge-block">
-        <div tabindex="1" class="date-timer__ledge active-date-ledge">current time</div>
-        <div tabindex="2" class="date-timer__ledge">stopwatch</div>
-        <div tabindex="3" class="date-timer__ledge">current time</div>
+      <div class="date-timer__ledge ledge-container">
+        <div tabindex="1" data-timer="ledge-current-time" data-ledge="stopwatch" class="ledge">current time
+        </div>
+        <div tabindex="2" data-timer="ledge-stopwatch" data-ledge="stopwatch" class="ledge ledge-stopwatch">stopwatch
+        </div>
+      </div>
+      <div data-ledge="stopwatch" data-ledge="current-time" class="date-timer__buttons button-container">
+        <div class="button button-reset fa-solid fa-rotate-right" data-timer="reset"></div>
+        <div class="button button-start" data-timer="start"></div>
       </div>
     </div>
   </div>

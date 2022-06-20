@@ -1,6 +1,8 @@
 body {
   background-color: rgb(34, 34, 34);
   color: yellow;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 .date-timer {
@@ -9,7 +11,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 900px;
-  height: 300px;
+  height: 350px;
   border: 4px solid rgb(119, 118, 118);
   border-radius: 20px;
 }
@@ -21,10 +23,13 @@ body {
   display: flex;
   font-size: 25px;
   padding: 0 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
   z-index: 100;
   background-color: rgb(34, 34, 34);
+  transition: 0.3s;
+}
+
+.date-timer__month.active-stopwatch {
+  display: none;
 }
 
 .date-block {
@@ -33,10 +38,8 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
   font-size: 60px;
   color: rgb(138, 139, 129);
-  font-weight: 700;
 }
 
 .date-block__item {
@@ -67,7 +70,7 @@ body {
   color: yellow;
 }
 
-.date-timer__ledge-block {
+.date-timer__ledge {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -77,12 +80,9 @@ body {
   transform: translateY(100%);
 }
 
-.date-timer__ledge {
-  font-family: 'Montserrat', sans-serif;
+.ledge {
   font-size: 18px;
-  font-weight: 700;
   padding: 8px 12px;
-  opacity: 0.3;
   border: 4px solid rgb(119, 118, 118);
   border-top-style: none;
   border-radius: 0 0 20px 20px;
@@ -90,11 +90,85 @@ body {
   transition: 0.5s;
 }
 
-.date-timer__ledge:hover,
-.date-timer__ledge:focus {
+.ledge.active-stopwatch:hover,
+.ledge.ledge-stopwatch:hover {
   opacity: 0.6;
 }
 
-.date-timer__ledge.active-date-ledge {
+.ledge.active-stopwatch {
+  opacity: 0.3;
+}
+
+.ledge.ledge-stopwatch {
+  opacity: 0.3;
+}
+
+.ledge.ledge-stopwatch.active-stopwatch {
   opacity: 1;
+}
+
+.date-timer__buttons {
+  display: none;
+  width: 100%;
+  height: 35px;
+  position: absolute;
+  bottom: 7%;
+  justify-content: center;
+}
+
+.date-timer__buttons.active-stopwatch {
+  display: flex;
+}
+
+
+.button-container {
+  justify-content: center;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  color: yellow;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.button-start {
+  background: yellow;
+  clip-path: polygon(0 0,
+      50% 25%,
+      50% 75%,
+      50% 75%,
+      50% 25%,
+      100% 50%,
+      100% 50%,
+      0 100%);
+}
+
+.button-start.button-pause {
+  clip-path: polygon(0 0,
+      40% 0,
+      40% 100%,
+      60% 100%,
+      60% 0,
+      100% 0,
+      100% 100%,
+      0 100%);
+}
+
+.button:not(:last-child) {
+  margin-right: 40px;
+}
+
+.button-reset {
+  font-size: 30px;
+}
+
+.button-reset.reset-active {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.button-reset.reset-animation {
+  transform: rotateZ(360deg);
 }
